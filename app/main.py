@@ -8,6 +8,6 @@ movies = []
 @app.route('/',methods = ["GET","POST"])
 def index():
 
-  return  render_template('templates/admin/index.html')
+  return  render_template('app/templates/admin/index.html')
 
 ##IMDb movies extensive dataset

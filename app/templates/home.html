@@ -1,0 +1,116 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <style>
+        body {
+	margin: 0;
+	padding: 0;
+	color: #606776;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 12px;
+	line-height: 1.4em;
+	background-color: #495364;
+	background-image: url(../images/templatemo_body.png);
+	background-repeat: repeat;
+}
+a, a:link, a:visited { color: #e5bb58; font-weight: normal; text-decoration: none }
+a:hover { text-decoration: underline; }
+
+a.gototop { clear: both; display:block; float: right; margin-top: 40px; height: 20px; line-height: 20px; font-size: 11px; color: #485163; font-weight: 700; padding-left: 15px; background: url(../images/go_to_top.png) scroll 0 3px no-repeat }
+
+p { margin: 0 0 10px 0; padding: 0; }
+img { border: none; }
+em { color: #fff }
+blockquote { font-style: italic; margin: 0 0 20px 0}
+cite { font-weight: bold; color:#e5bb58; }
+cite a, cite a:link, cite a:visited  { font-size: 12px; text-decoration: none; font-style: normal }
+cite span { font-weight: 400; color: #606776; }
+
+h1, h2, h3, h4, h5, h6 { color: #bac9ee; font-weight: normal; }
+h1 { font-size: 36px; margin: 0 0 30px; padding: 5px 0 }
+h2 { font-size: 24px; margin: 0 0 25px; padding: 5px 0 }
+h3 { font-size: 20px; margin: 0 0 20px; padding: 0; }
+h4 { font-size: 16px; margin: 0 0 15px; padding: 0; }
+h5 { font-size: 14px; margin: 0 0 10px; padding: 0;  }
+h6 { font-size: 12px; margin: 0 0 5px; padding: 0; font-weight: 700 }
+
+.cleaner { clear: both }
+.h10 { height: 10px }
+.h20 { height: 20px }
+.h30 { height: 30px }
+.h40 { height: 40px }
+.h50 { height: 50px }
+.divider { margin-bottom: 40px; padding-bottom: 20px; background: url(../images/templatemo_divider.png) repeat-x bottom }
+
+.float_l { float: left }
+.float_r { float: right }
+
+
+.tmo_list { margin: 10px 0 10px 30px; padding: 0; list-style: decimal-leading-zero }
+.tmo_list li { color:#606776; margin: 0 0 10px 0; padding: 0 5px 0 0; background: url(../images/templatemo_list.png) no-repeat scroll 0 5px  }
+.tmo_list li a { color: #606776; font-weight: normal }
+.tmo_list li a:hover { color: #606776 }
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IMDb Content!</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<div id="templatemo_header">
+    	<div id="site_title"><a href="#">ISS-SERVICE</a></div>
+    </div>
+<div id="home" class="main_box">
+        	<h1>{{ d['title'] }}</h1>
+            <h5>imdbID: {{ d['imdb']['id'] }}</h5>
+            <h6>Rated: {{ d['rated'] }}</h6>
+            <h6>Geners: {{ d['genres'][0] }}</h6>
+        	<div class="col col_23">
+            	<img src="{{ d['poster'] }}" alt="image" class="img_frame" />
+                <p><em>{{ d['plot'] }}</em></p>
+                <p>{{ d['fullplot'] }}</p>
+                <div class="cleaner h40"></div>
+                <h3>Cast & Production</h3>
+                <ul class="tmo_list">
+
+                    <li>Directors: {{ d['directors'] }}</li>
+                    <li>Writers: {{ d['writers'] }}</li>
+                    <li>Production: {{ d['tomatoes']['production'] }}</li>
+
+                    <li>Cast: {{ d['cast'] }}</li>
+
+
+                </ul>
+			</div>
+            <div class="col col_13 no_margin_right">
+            	<h3>Reviews</h3>
+                <blockquote>
+                    <cite>rotten Tomatoes</cite>
+                    <ul class="review_post1">
+                	<li>Rating: {{ d['tomatoes']['rating'] }}</li>
+                    <li>Reviews: {{ d['tomatoes']['numReviews'] }}</li>
+                    <li>Rotten: {{ d['tomatoes']['rotten'] }}</li>
+                    </ul>
+                </blockquote>
+                <blockquote>
+                    <cite>IMDb Ratings</cite>
+                    <ul class="review_post2">
+                	<li>Rating: {{ d['imdb']['rating'] }}</li>
+                    <li>Votes: {{ d['imdb']['votes'] }}</li>
+                    </ul>
+                </blockquote>
+                <div class="cleaner h40"></div>
+
+            	<h3>Language & Dates</h3>
+                <ul class="dates_post">
+                    <li>Languages: {{ d['languages'] }}</li>
+                	<li>Released: {{ d['released'] }}</li>
+                    <li>DVD: {{ d['dvd'] }}</li>
+                    <li>Year: {{ d['year'] }}</li>
+                </ul>
+            </div>
+            <div class="cleaner"></div>
+            <a href="#templatemo_header" class="gototop">Go To Top</a>
+            <div class="cleaner"></div>
+		</div> <!-- END of home -->
+
+</head>
+</html>

@@ -13,7 +13,7 @@ app.secret_key = 'hello'
 def content():
   if request.method=='GET':
     d = session['d']
-    return render_template('content.html',d=d)
+    return render_template('home.html',d=d)
 
 @app.route('/',methods = ["GET","POST"])
 def index():

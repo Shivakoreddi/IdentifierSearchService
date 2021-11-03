@@ -7,8 +7,6 @@ app= Flask(__name__)
 
 client = pm.MongoClient("mongodb+srv://mongo-skoreddi:Sravani1234@cluster0.xwp4e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 app.db = client.mflix
-##collection = db["movies"]
-##movies=[]
 app.secret_key = 'hello'
 
 @app.route('/content',methods=["GET"])

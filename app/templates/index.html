@@ -1,18 +1,24 @@
 <html>
+<header style="height: 50px; width: 100%; background-color: #333; text-align: center;">
+ <h1 style="background-color:#33475b;font-size:50px">Movies Identifier Search Service</h1>
+</header>
+<aside>
+	<p>Movies and media contents based on IMDb!!</p>
+</aside>
 <body>
-<h1 style="background-color:#33475b;font-size:50px">Movies Identifier Search Service</h1>
+<h3>Find My Movie!!</h3>
 <form action="" method="POST" class="form-index">
   <div class="form-index"><label for="value">ID Type</label>
-    <select name="ID Type">
-		<option value="content id">Content ID</option>
-		<option value="imdb id">IMDB ID</option>
-		<option value="title">Content title</option>
+    <select name="ID_Type">
+        <option value="default"></option>
+		<option value="id">IMDB ID</option>
+		<option value="title">Content Title</option>
 
 	</select>
   </div>
   <div class="form-index">
     <label for="value">ID Value</label>
-    <input type="value" name="value" id="value" required>
+    <input type="value" name="id_value" id="value" required>
   </div>
   <div class="form-index">
     <input type="submit" value="Search">

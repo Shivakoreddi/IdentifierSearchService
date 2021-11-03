@@ -21,8 +21,6 @@ def index():
     movie={}
     id_type = request.form.get("ID_Type")
     id_value = request.form.get("id_value")
-    print(id_type)
-    print(id_value)
     if id_type=="id":
       data = app.db.movies.find({'imdb.id':int(id_value)})
       for d in data:
@@ -36,5 +34,4 @@ def index():
         session['d']=d
         return redirect(url_for('content',d=d))
   return render_template('index.html')
-
 

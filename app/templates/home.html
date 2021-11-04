@@ -1,17 +1,19 @@
 <!DOCTYPE html >
 <html>
+
 <head>
     <style>
         body {
 
 
-	font-family: "Lucida Console";
-	font-size: 12px;
+	font-family: "Lucida Console",sans-serif;
+	font-size: 13px;
 	font-style: normal;
-	line-height: 1.4em;
-    background-image: url('/static/img/FORM_03_wes.jpg');
+
+    background-image: {{ url_for('static',filename='/img/FORM_03_wes.jpg') }};
 	background-repeat: no-repeat;
     background-size: 100%;
+
 
 
 }
@@ -24,11 +26,10 @@ p { margin: 0 0 10px 0; padding: 0; }
 img { border: none; }
 em { color: #fff }
 blockquote { margin: 0 0 20px 0}
-cite { font-weight: bold; color:#e5bb58; }
-cite a, cite a:link, cite a:visited  { font-size: 12px; text-decoration: none; font-style: normal }
-cite span { font-weight: 400; color: #606776; }
+cite { font-weight: bold; color:#3d3d3d; }
 
-h1, h2, h3, h4, h5, h6 { color: #bac9ee; font-weight: normal; }
+
+h1, h2, h3, h4, h5, h6 { color: #FFD900; font-weight: normal; }
 h1 { font-size: 36px; margin: 0 0 30px; padding: 5px 0 }
 h2 { font-size: 24px; margin: 0 0 25px; padding: 5px 0 }
 h3 { font-size: 20px; margin: 0 0 20px; padding: 0; }
@@ -48,7 +49,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; font-weight: 700 }
 .float_r { float: right }
 
 
-.tmo_list { margin: 10px 0 10px 30px; padding: 0; list-style: decimal-leading-zero }
+.tmo_list { margin: 10px 0 10px 30px; padding: 0;  }
 .tmo_list li { color:#606776; margin: 0 0 10px 0; padding: 0 5px 0 0; scroll 0 5px  }
 .tmo_list li a { color: #606776; font-weight: normal }
 .tmo_list li a:hover { color: #606776 }
@@ -86,37 +87,77 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; font-weight: 700 }
 #templatmeo_menu ul li { margin: 0; padding: 0; }
 #templatmeo_menu ul li a { display: block; position: relative; float: left; margin-left: 10px; width: 160px; height: 49px }
 #templatmeo_menu ul li a span { position: absolute; width: 30px; height: 30px; top: 8px; left: 10px; }
-.review_post { margin: 0; padding: 0; list-style: none }
-.review_post1 li { margin: 0 0 20px }
-.review_post2 li { margin: 0 0 20px }
+.left {
+  left: 0;
 
+}
+.right {
+  position: absolute;
+  right: 500px;
+  width: 100;
+  height: 10;
+  padding: 0px;
+  max-width: 20%;
+  max-height: 5%;
+
+}
+.bimg
+{
+  position: absolute;
+  right: 0;
+  width: 300px;
+  padding: 0px;
+  }
+}
+.top_title {
+  position: absolute;
+  left: 50px;
+  width: 300px;
+  padding: 10px;
+  }
 .col { float: left; margin-right: 40px }
 .col_12 { width: 380px }
 .col_13 {
   position: absolute;
-  right: 0px;
+  left: 500px;
   width: 300px;
-  padding: 10px;
+  padding: 0;
   }
-.col_23 { width: 520px }
+.col_23 {
+  position: absolute;
+  left: 20px;
+  width: 300px;
+  padding: 0;}
 .no_margin_right { margin-right: 0 }
     </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>IMDb Content!</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<div id="templatemo_header">
-    <div id="site_title"><h2>ISS-SERVICE</h2></div>
-    </div>
-<div id="home" class="main_box">
+   <div id="templatemo_header">
+<h2>Movie Identifier Search Service</h2>
+</div>
+
+  <div class="split right">
+    <img src="{{ d['poster'] }}" alt="image" class="img_frame" />
+</div>
+<div id="home" class="split left">
+            <div class="top_title">
         	<h1>{{ d['title'] }}</h1>
-            <h5>imdbID: {{ d['imdb']['id'] }}</h5>
-            <h6>Rated: {{ d['rated'] }}</h6>
-            <h6>Geners: {{ d['genres'][0] }}</h6>
-        	<div class="col col_23">
-            	<img src="{{ url_for('static',filename=d['poster']) }}" alt="image" class="img_frame" />
-                <p><em>{{ d['plot'] }}</em></p>
-                <p>{{ d['fullplot'] }}</p>
+                <ul class="tmo_list">
+                    <li>IMDb ID: {{ d['imdb']['id'] }}</li>
+                    <li>Rated: {{ d['rated'] }}</li>
+                    <li>Genres: {{ d['genres'][0] }}</li>
+
+                </ul>  </div>
+
+            <div class="col_23">
+                <h3>Movie Description</h3>
+                <ul class="tmo_list">
+                    <li>Plot: {{ d['plot'] }}</li>
+                    <li>FullPlot: {{ d['fullplot'] }}</li>
+
+                </ul>
                 <div class="cleaner h40"></div>
                 <h3>Cast & Production</h3>
                 <ul class="tmo_list">
@@ -128,25 +169,25 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; font-weight: 700 }
 			</div>
             <div class="col_13">
             	<h3>Reviews</h3>
-                <blockquote>
-                    <cite>Rotten Tomatoes</cite>
-                    <ul class="review_post1">
+
+                    <p>Rotten Tomatoes</p>
+                    <ul class="tmo_list">
                 	<li>Rating: {{ d['tomatoes']['rating'] }}</li>
                     <li>Reviews: {{ d['tomatoes']['numReviews'] }}</li>
                     <li>Rotten: {{ d['tomatoes']['rotten'] }}</li>
                     </ul>
-                </blockquote>
-                <blockquote>
-                    <cite>IMDb Ratings</cite>
-                    <ul class="review_post2">
+
+
+                    <p>IMDb Ratings</p>
+                    <ul class="tmo_list">
                 	<li>Rating: {{ d['imdb']['rating'] }}</li>
                     <li>Votes: {{ d['imdb']['votes'] }}</li>
                     </ul>
-                </blockquote>
+
                 <div class="cleaner h40"></div>
 
             	<h3>Language & Dates</h3>
-                <ul class="dates_post">
+                <ul class="tmo_list">
                     <li>Languages: {{ d['languages'] }}</li>
                 	<li>Released: {{ d['released'] }}</li>
                     <li>DVD: {{ d['dvd'] }}</li>

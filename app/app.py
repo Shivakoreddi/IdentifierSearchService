@@ -13,6 +13,7 @@ app.secret_key = 'hello'
 def content():
   if request.method=='GET':
     d = session['d']
+
     return render_template('home.html',d=d)
 
 @app.route('/',methods = ["GET","POST"])
@@ -26,12 +27,14 @@ def index():
       for d in data:
         del(d['_id'])
         session['d']=d
+
         return redirect(url_for('content',d=d))
     else:
       data = app.db.movies.find({'title':str(id_value)})
       for d in data:
         del (d['_id'])
         session['d']=d
+
         return redirect(url_for('content',d=d))
   return render_template('index.html')
 

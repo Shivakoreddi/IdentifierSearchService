@@ -1,28 +1,64 @@
 <html>
 <header style="height: 50px; width: 100%; background-color: #333; text-align: center;">
- <h1 style="background-color:#33475b;font-size:50px">Movies Identifier Search Service</h1>
+ <h1 style="background-color:#33475b;font-size:50px;color:#FFD900">ISS-Service</h1>
 </header>
+<style>
+    .center {
+text-align: center;
+}
+  .form-index1 {
+position: absolute;
+  left: 500px;
+  width: 300px;
+  padding: 10px;
+}
+  .form-index2 {
+position: absolute;
+  left: 750px;
+  width: 300px;
+  padding: 10px;
+}
+  .form-index3 {
+position: absolute;
+  left: 950px;
+  width: 300px;
+  padding: 10px;
+}
+
+p.copyright {
+	padding: 40px 0 20px;
+	text-align: center;
+	color: #000;
+
+}
+</style>
 <aside>
 	<p>Movies and media contents based on IMDb!!</p>
 </aside>
 <body>
-<h3>Find My Movie!!</h3>
+
+<div class="center">
 <form action="" method="POST" class="form-index">
-  <div class="form-index"><label for="value">ID Type</label>
+  <div class="form-index1"><label for="value">ID Type</label>
     <select name="ID_Type">
-        <option value="default"></option>
-		<option value="id">IMDB ID</option>
+        <option value="id">IMDB ID</option>
 		<option value="title">Content Title</option>
+        <option value="CID">Content ID</option>
 
 	</select>
   </div>
-  <div class="form-index">
+  <div class="form-index2">
     <label for="value">ID Value</label>
     <input type="value" name="id_value" id="value" required>
   </div>
-  <div class="form-index">
+  <div class="form-index3">
     <input type="submit" value="Search">
   </div>
 </form>
+</div>
+<footer>
+    <p class="copyright">© Copyright 2021 @Shivakoreddi</p>
+</footer>
+
 </body>
 </html>

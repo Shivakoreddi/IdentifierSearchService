@@ -5,7 +5,7 @@ from flask import Flask,render_template,request,redirect,url_for,session
 import pymongo as pm
 app= Flask(__name__)
 
-client = pm.MongoClient("mongodb+srv://mongo-skoreddi:Sravani1234@cluster0.xwp4e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = pm.MongoClient("mongodb+srv://mongo-skoreddi:Flask1234@cluster0.xwp4e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 app.db = client.mflix
 app.secret_key = 'hello'
 

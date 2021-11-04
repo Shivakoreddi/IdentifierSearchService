@@ -152,23 +152,23 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; font-weight: 700 }
             <div class="col_23">
                 <h3>Movie Description</h3>
                 <ul class="tmo_list">
-                    <li>Plot: {{ d['plot'] }}</li>
-                    <li>FullPlot: {{ d['fullplot'] }}</li>
+                    <li><h6>Plot:</h6> {{ d['plot'] }}</li>
+                    <li><h6>FullPlot:</h6> {{ d['fullplot'] }}</li>
 
                 </ul>
                 <div class="cleaner h40"></div>
                 <h3>Cast & Production</h3>
                 <ul class="tmo_list">
                     <li><h6>Directors:</h6> {{ d['directors'] }}</li>
-                    <li>Writers: {{ d['writers'] }}</li>
-                    <li>Production: {{ d['tomatoes']['production'] }}</li>
-                    <li>Cast: {{ d['cast'] }}</li>
+                    <li><h6>Writers:</h6> {{ d['writers'] }}</li>
+                    <li><h6>Production:</h6> {{ d['tomatoes']['production'] }}</li>
+                    <li><h6>Cast:</h6> {{ d['cast'] }}</li>
                 </ul>
 			</div>
             <div class="col_13">
             	<h3>Reviews</h3>
 
-                    <p>Rotten Tomatoes</p>
+                    <h6>Rotten Tomatoes</h6>
                     <ul class="tmo_list">
                 	<li>Rating: {{ d['tomatoes']['rating'] }}</li>
                     <li>Reviews: {{ d['tomatoes']['numReviews'] }}</li>
@@ -176,7 +176,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; font-weight: 700 }
                     </ul>
 
 
-                    <p>IMDb Ratings</p>
+                    <h6>IMDb Ratings</h6>
                     <ul class="tmo_list">
                 	<li>Rating: {{ d['imdb']['rating'] }}</li>
                     <li>Votes: {{ d['imdb']['votes'] }}</li>
